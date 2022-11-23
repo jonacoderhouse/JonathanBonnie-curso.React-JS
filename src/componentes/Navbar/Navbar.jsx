@@ -8,6 +8,13 @@ import "../Navbar/Navbar.css"
 
 const Navbar = () => {
 
+    const links =[
+        {nombre:"Casa", id:1},
+        {nombre:"specialità", id:2},
+        {nombre:"Contatto", id:3}  
+    ]
+
+
     return <header >
         <nav className="navbar navbar-expand-lg bg-primary">
             <div className="container-fluid">
@@ -16,7 +23,7 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <Categorias />
+                    <Categorias opciones = {links} />
                 </div>
             </div>
             <CartWidget />
