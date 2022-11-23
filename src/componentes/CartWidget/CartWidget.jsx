@@ -1,4 +1,5 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import "../CartWidget/CartWidget.css"
 
 const CartWidget = () => {
     return <>
@@ -7,7 +8,7 @@ const CartWidget = () => {
             <li className="nav-link">
                 <ShoppingCartIcon color="dark" fontSize="large" />
             </li>
-             <p>0</p>
+             <p className='contador'>0</p>
         </ul>
     </>
 
