@@ -1,15 +1,36 @@
 import React from 'react';
-import "../categorias/categorias.css"
+import "./categorias.css"
 
 const Categorias = ({ opciones }) => {
     return (
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {opciones.map((opcione) => {
-                return <li className="nav-item">
-                    <a className="nav-link active" aria-current="page" href="#">{opcione.nombre}</a>
-                </li>
-            })}
+            <li className="nav-item">
+
+                <button className='btn btn-primary'><i className="fas fa-home fa-lg"></i></button>
+
+            </li>
+            <li className="nav-item">
+
+                <button className='btn btn-primary'><i className="fas fa-laptop fa-lg"></i></button>
+
+            </li>
+            <li className="nav-item">
+
+                <button className='btn btn-primary'><i className="fas fa-mobile fa-lg"></i></button>
+
+            </li>
+            <li className="nav-item">
+
+                <button className='btn btn-primary'><i className="fas fa-tv fa-lg"></i></button>
+
+            </li>
+            <li className="nav-item">
+
+                <button className='btn btn-primary'><i className="fas fa-headphones fa-lg"></i></button>
+
+            </li>
         </ul>
+
     );
 }
 

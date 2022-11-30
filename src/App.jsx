@@ -1,18 +1,18 @@
 import './App.css';
 import Navbar from "./componentes/Navbar/Navbar"
 import ItemListContainer from "./componentes/ItemListContainer/ItemListoConteiner"
-import ItemCount from "./componentes/ItemCount/ItemCount"
+import ItemDailConteiner from './componentes/itemDetailContainer/ItemDailConteiner';
+
 
 const App = () => {
 
-  const bienvenidaEcommerce = "Benvenuti nel mio e-commerce"
-  let cantidadProducto = 10
-  
+  const bienvenidaEcommerce = "Bienvenido a mi E-commerce"
+
   return (
     <>
     <Navbar/>
     <ItemListContainer greeting = {bienvenidaEcommerce}/>
-    <ItemCount stock = {cantidadProducto}/>
+    <ItemDailConteiner/>
     </>
 
   );

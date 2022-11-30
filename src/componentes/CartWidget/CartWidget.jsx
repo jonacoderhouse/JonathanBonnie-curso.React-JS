@@ -1,14 +1,15 @@
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+
 import "../CartWidget/CartWidget.css"
 
 const CartWidget = () => {
     return <>
-
-        <ul className='navbar-nav me-auto'>
-            <li className="nav-link">
-                <ShoppingCartIcon color="dark" fontSize="large" />
+        <ul className='navbar-nav me-auto cartWidget'>
+            <li className="nav-item">
+                <button className="btn btn-primary">
+                    <i className="fas fa-shopping-cart fa-lg"></i>
+                    <span className="cantCarrito">0</span>
+                </button>
             </li>
-             <p className='contador'>0</p>
         </ul>
     </>
 

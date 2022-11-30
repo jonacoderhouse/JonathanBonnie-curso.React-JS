@@ -1,0 +1,40 @@
+/*CARD PRODCTOS*/
+.cardProducto{
+    width:  18rem;
+    margin: 4px;
+    background-color:hsl(0, 0%, 97%);
+
+}
+ .cardProductos{
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+.cardBody {
+    background-color: white;
+    margin-bottom: 3px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+img {
+    margin-top:3px;
+}
+
+.cartWidget {
+    position: relative;
+    left: 33%;
+    color:white;
+}
+
+.cantCarrito {
+    position: relative;
+    left: 13%;
+}
+
+.itemDetail {
+    max-width: 540px;
+    margin-top: 30px;
+}
+
