@@ -1,8 +1,8 @@
 //FUNCIONES NECESARIAS EN MI APLICACION
-//consulta asincronica
+//consulta asincrona
 
-const consultarBDD = async () => {
-    const response = await fetch("./json/productos.json")
+const consultarBDD = async (ruta) => {
+    const response = await fetch(ruta)
     const productos = await response.json()
     return productos
 }

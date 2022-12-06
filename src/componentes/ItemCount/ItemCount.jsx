@@ -20,10 +20,12 @@ const ItemCount = ({ stock }) => {
         alert("producto Agregado")
     }
     return <div>
-        <button className="btn btn-dark" onClick={sumar}>+</button>
+        <button className="btn btn-outline-info" onClick={sumar}> + </button>
         {contador}
-        <button className="btn btn-primary" onClick={resta}>-</button>
-        <button className="btn btn-dark" onClick={agregar}>Agregar</button>
+        <button className="btn btn-outline-info" onClick={resta}> - </button>
+        <br />
+        <br />
+        <button className="btn btn-outline-info" onClick={agregar}> Agregar </button>
 
     </div>
 
