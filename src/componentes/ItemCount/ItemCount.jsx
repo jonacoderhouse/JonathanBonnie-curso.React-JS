@@ -25,7 +25,7 @@ const ItemCount = ({ stock }) => {
         <button className="btn btn-outline-info" onClick={resta}> - </button>
         <br />
         <br />
-        <button className="btn btn-outline-info" onClick={agregar}> Agregar </button>
+        <button className="btn btn-outline-info" onClick={agregar}><i className="fas fa-cart-plus"></i></button>
     </div>
 
 }
