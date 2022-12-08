@@ -22,7 +22,7 @@ const App = () => {
           <Route path='/productos/:id' element={<ItemDailConteiner />} /> 
           <Route path='/category/:category' element={<ItemListContainer />} />
           <Route path='/CartWidget' element={<Cart/>}/>
-          <Route path='/checkout' element={<Checkout/>}/>
+          <Route path='/cart' element={<Checkout/>}/>
         </Routes>
       </BrowserRouter>
     </>

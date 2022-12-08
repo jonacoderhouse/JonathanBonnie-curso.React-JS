@@ -2,6 +2,13 @@ import React from 'react';
 import ItemCount from "../ItemCount/ItemCount"
 
 const ItemDetail = ({item}) => {
+
+    const onAdd = (contador) => {
+        console.log(contador)
+    }   
+
+
+
     return (
         <div className="row g-0">
             <div className="col-md-4">
@@ -14,7 +21,7 @@ const ItemDetail = ({item}) => {
                     <p className="card-text">Marca: {item.marca} </p>
                     <p className="card-text">Precio: $ {new Intl.NumberFormat('de-DE').format(item.precio)} </p>
                     <p className="card-text">Stock: {item.stock} </p>
-                    <ItemCount stock= {item.stock}/><br/>
+                    <ItemCount stock= {item.stock} onAdd={onAdd}/><br/>
                     <button className="btn btn-warning">Finalizar Compra</button>
                 </div>
                 
