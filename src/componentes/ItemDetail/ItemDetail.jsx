@@ -1,13 +1,13 @@
 import React from 'react';
 import ItemCount from "../ItemCount/ItemCount"
 
+
 const ItemDetail = ({item}) => {
 
     const onAdd = (contador) => {
         console.log(contador)
     }   
-
-
+    
 
     return (
         <div className="row g-0">

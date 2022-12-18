@@ -1,6 +1,4 @@
-body{
-    background-color: black;
-}
+
 
 /*CART PRODCTOS*/
 .cardProducto {
@@ -17,16 +15,28 @@ body{
     justify-content: center;
 }
 
+/*CARD ITEM*/
+.cardBodyDark {
+    background-color: rgba(137, 43, 226, 0.431);
+    margin-bottom: 3px;
+    text-align: center;
+    color: black;
+}
+
 .cardBody {
     background-color: white;
     margin-bottom: 3px;
     text-align: center;
+    
+}
+.card-title{
+    color: black;
 }
 
 img {
     margin-top: 3px;
 }
-
+/*CARDWIDGET*/
 .cartWidget {
     position: relative;
     right: -3%;
@@ -34,9 +44,8 @@ img {
 }
 .nav-Link{
     margin: 10px;
-    color: antiquewhite;
+    color: orange;
 }
-
 
 .cantCarrito {
     position: relative;
@@ -51,7 +60,7 @@ img {
 .cart{
     text-align: center;
     margin-top:50px;
-    color: green;
+    color: antiquewhite;
 }
 
 /*Mensaje bienvenida*/
@@ -63,18 +72,22 @@ img {
 }
 
 
-.card-title{
-    color: black;
-}
 
+/*NAVBAR*/
 .logo{
     width: 100px;
 }
 
-.header{
-    background-color: rgba(137, 43, 226, 0.351);
+/*TITULO CARD DE MUESTRA*/
+.cards{
+    color:black;
 }
 
-.cards{
-    color: antiquewhite;
+
+/*DARKMODE*/
+.darkMode {
+    background-color: black;
 }
+
+
+
