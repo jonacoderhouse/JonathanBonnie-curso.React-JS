@@ -4,6 +4,7 @@ import "../ItemListContainer/Item.css"
 import ItemList from "../ItemList/Itemlist"
 import consultarBDD from "../assets/funciones"
 import { useParams } from "react-router-dom"
+import { cargarBDD } from '../../componentes/assets/firebase';
 
 const ItemListContainer = ({ greeting }) => {
     // En itemListContainer voy a consultar mi base de dato y le mando 
@@ -26,7 +27,7 @@ const ItemListContainer = ({ greeting }) => {
                 setProductos(cardProductos)
             })
         }
-
+            //cargarBDD().then(productos => console.log(productos))
 
     }, [category]);
 

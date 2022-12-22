@@ -1,7 +1,9 @@
+//HOOKS
 import React,{useEffect,useState} from 'react';
 import consultarBDD from '../assets/funciones';
-import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from "react-router-dom";
+//COMPONENTES
+import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDailConteiner = () => {
     const [producto, setProducto] = useState([]);

@@ -6,7 +6,7 @@ import ItemListContainer from "./componentes/ItemListContainer/ItemListConteiner
 import ItemDailConteiner from './componentes/itemDetailContainer/ItemDailConteiner';
 import Cart from "./componentes/Cart/Cart"
 import Checkout from "./componentes/Checkout/Checkout"
-import Home from "./componentes/Home/Home"
+
 //HOOKS
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 //CONTEXT
@@ -25,7 +25,6 @@ const App = () => {
             <Route path='/category/:category' element={<ItemListContainer />} />
             <Route path='/CartWidget' element={<Cart />} />
             <Route path='/cart' element={<Checkout />} />
-            <Route path='/nuevoHome' element={<Home />} />
           </Routes>
         </DarkModeProvider>
       </BrowserRouter>

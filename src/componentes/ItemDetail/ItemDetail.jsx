@@ -1,18 +1,19 @@
 import React from 'react';
 import ItemCount from "../ItemCount/ItemCount"
+import {useCarritoContext} from "../../context/CarritoContex"
 
 
 const ItemDetail = ({item}) => {
-
-    const onAdd = (contador) => {
-        console.log(contador)
-    }   
+    const {addItem} = useCarritoContext() //CONTEXT
     
-
+    const onAdd = (contador) => {
+        addItem(item, contador)
+        console.log(contador,item);
+    }   
     return (
         <div className="row g-0">
-            <div className="col-md-4">
-                <img src={`../img/${item.img}`} alt="" className="img-fluid rounded-start"/>
+            <div className="col-md-4 imgBody">
+                <img src={item.img} alt="" className="img-fluid rounded-start"/>
             </div>
             <div className="col-md-8">
                 <div className="card-body cardBodyItemDetail">

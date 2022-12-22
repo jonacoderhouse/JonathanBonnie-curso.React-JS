@@ -3,7 +3,7 @@
 /*CART PRODCTOS*/
 .cardProducto {
     width: 20rem;
-    margin: 6px;
+    margin: 8px;
     background-color: rgba(137, 43, 226, 0.425);
 
 }
@@ -25,17 +25,23 @@
 
 .cardBody {
     background-color: white;
-    margin-bottom: 3px;
+    margin-bottom: 5px;
     text-align: center;
     
 }
 .card-title{
-    color: black;
+    color: red;
 }
 
 img {
     margin-top: 3px;
 }
+
+/*DARKMODE*/
+.darkMode {
+    background-color: black;
+}
+
 /*CARDWIDGET*/
 .cartWidget {
     position: relative;
@@ -84,10 +90,24 @@ img {
 }
 
 
-/*DARKMODE*/
-.darkMode {
-    background-color: black;
+.imgBody {
+    display:block;
+    margin:auto;
+    max-height: 100%;
 }
 
+.cartContainer {
+    margin-top:3%;
+    margin-left: 26.5%;
+}
 
+.divButtons button{
+    margin:4px;
+}
 
+@media (max-width:991px) {
+    .cartWidget {
+        color:white;
+        margin-bottom: 10px;
+    }
+}
