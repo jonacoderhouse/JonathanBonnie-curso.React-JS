@@ -89,13 +89,13 @@ img {
     color:black;
 }
 
-
+/*ITEMDETAIL*/
 .imgBody {
     display:block;
     margin:auto;
     max-height: 100%;
 }
-
+/*CART*/
 .cartContainer {
     margin-top:3%;
     margin-left: 26.5%;

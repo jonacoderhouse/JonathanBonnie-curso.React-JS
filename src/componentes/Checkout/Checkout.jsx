@@ -1,18 +1,26 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { createOrdenCompra, getOrdenCompra, getProducto, updateProducto} from '../../componentes/assets/firebase';
+import { useCarritoContext } from "../../context/CarritoContex";
 
 const Checkout = () => {
+
+    const {totalPrice, carrito, emptyCart} = useCarritoContext()
     const datosFormulario = React.useRef()
     let navigate = useNavigate()
 
     const consultarFormulario = (e) => {
         e.preventDefault()
-        console.log(datosFormulario)
         const datForm = new FormData(datosFormulario.current)
         const cliente = Object.fromEntries(datForm) //metodo
-        console.log(cliente)
-        e.target.reset()
-        navigate("/")
+        
+        createOrdenCompra(cliente,totalPrice(), new Date().toISOString()).then(ordenCompras =>{//funcion firebsae
+            getOrdenCompra(ordenCompras.id).then(item =>{//funcion firebase
+                console.log(item);
+                e.target.reset()
+                navigate("/")
+            })
+        })
     }
     
     return (
