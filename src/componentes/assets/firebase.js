@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 //Funciones ya creada por firebase 
 import {getFirestore, addDoc, getDocs, getDoc, updateDoc, deleteDoc, collection, doc} from 'firebase/firestore' //importe estas funciones de firesbae para acceder a la configuraciones de mi base de datos.
 
-    const firebaseConfig = {
+const firebaseConfig = {
     apiKey: process.env.API_KEY,
     authDomain: "react-2022-bb8f2.firebaseapp.com",
     projectId: "react-2022-bb8f2",
@@ -13,13 +13,13 @@ import {getFirestore, addDoc, getDocs, getDoc, updateDoc, deleteDoc, collection,
     appId: "1:1098955223938:web:2cedb7421f6b6c0b45d59b",
 };
 
-    const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-    const db = getFirestore(); // CONSULTO MI BASE DE DATO CON GETFIRESTORE
+const db = getFirestore(); // CONSULTO MI BASE DE DATO CON GETFIRESTORE
 
     //CRUD PRODUCTOS
     // FUNCION PARA CARGAR MI BASE DE DATO EN FIREBASE DESDE MI OBJETO JSON.
-    const cargarBDD = async () => {
+const cargarBDD = async () => {
     const promise = await fetch("../json/productos.json");
     const productos = await promise.json(); // transformo en un formato json
     productos.forEach(async (prod) => {
@@ -38,15 +38,15 @@ import {getFirestore, addDoc, getDocs, getDoc, updateDoc, deleteDoc, collection,
     };
 
     // FUNCION PARA CONSULTAR TODOS LOS PRODUCTOS DE MI BASE DE DATO YA CARGADA EN FIREBASE
-    const getProductos = async() => {
+const getProductos = async() => {
     const productos = await getDocs(collection(db, "productos"))
     console.log(productos);
-    const items = productos.docs.map(prod => {
+    const items = productos.docs.map(prod => {//conversion de mis elementos
         return {...prod.data(), id: prod.id}// data() basicamente devuelve un objeto con sus propiedades, y agrego del id
     })
     return items
 }
- //FUNCION PARA CONSULTAR UN SOLO PROD POR MEDIO DE ID DE MI BASE DE DATO DE FIREBASE
+    //FUNCION PARA CONSULTAR UN SOLO PROD POR MEDIO DE ID DE MI BASE DE DATO DE FIREBASE
     const getProducto =  async (id) => {
     const producto = await getDoc(doc(db, "productos", id))
     const item = {...producto.data(), id: producto.id}

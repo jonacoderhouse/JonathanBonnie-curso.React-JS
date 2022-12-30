@@ -11,6 +11,7 @@ const ItemDetail = ({item}) => {
         console.log(contador,item);
     }   
     return (
+        
         <div className="row g-0">
             <div className="col-md-4 imgBody">
                 <img src={item.img} alt="" className="img-fluid rounded-start"/>

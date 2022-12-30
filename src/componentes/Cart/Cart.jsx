@@ -11,10 +11,10 @@ const Cart = () => {
     return (
         <>
             {carrito.length === 0 ?
-                <>
+                <div className='contenedorCart'>
                     <h1>Carrito vacio</h1>
                     <button className={`btn ${darkMode ? 'btn-secondary' : 'btn-primary'}`}><Link className="nav-link" to={'/'}>Continuar comprando</Link></button>
-                </>
+                </div>
                 :
                 <div className="container cartContainer">
                     {carrito.map((prod) =>

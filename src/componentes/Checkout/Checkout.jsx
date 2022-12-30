@@ -14,7 +14,7 @@ const Checkout = () => {
         const datForm = new FormData(datosFormulario.current)
         const cliente = Object.fromEntries(datForm) //metodo
         
-        createOrdenCompra(cliente,totalPrice(), new Date().toISOString()).then(ordenCompras =>{//funcion firebsae
+        createOrdenCompra(cliente,totalPrice(), new Date().toISOString().slice(0,10)).then(ordenCompras =>{//funcion firebsae
             getOrdenCompra(ordenCompras.id).then(item =>{//funcion firebase
                 console.log(item);
                 e.target.reset()

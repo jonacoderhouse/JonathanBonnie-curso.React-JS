@@ -28,14 +28,6 @@ const ItemListContainer = ({ greeting }) => {
         }
             //cargarBDD().then(productos => console.log(productos)) //Cargo mi bade de dato de firabase
             //getProductos().then(productos=>console.log(productos));
-            
-            /*  Metodo de actualizacion de prueba
-                getProducto("4yGGt8Rm1qtu9ECpRU3C").then(prod => {
-                prod.stock -= 16
-                delete prod.id
-                updateProducto("4yGGt8Rm1qtu9ECpRU3C", prod).then(estado => console.log(estado))
-            })*/
-
     }, [category]);
 
 
