@@ -65,7 +65,6 @@ const deleteProducto = async(id) =>{
     return estado
 }
 
-
 //CREATE Y READ ORDENES COMPRA
 
 const createOrdenCompra = async (cliente, preTotal, fecha ) => {
