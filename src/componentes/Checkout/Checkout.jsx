@@ -2,10 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createOrdenCompra, getOrdenCompra, getProducto, updateProducto} from '../../componentes/assets/firebase';
 import { useCarritoContext } from "../../context/CarritoContex";
+import { toast } from 'react-toastify';
 
 const Checkout = () => {
 
     const {totalPrice, carrito, emptyCart} = useCarritoContext()
+
     const datosFormulario = React.useRef()
     let navigate = useNavigate()
 
@@ -13,14 +15,34 @@ const Checkout = () => {
         e.preventDefault()
         const datForm = new FormData(datosFormulario.current)
         const cliente = Object.fromEntries(datForm) //metodo
-        
-        createOrdenCompra(cliente,totalPrice(), new Date().toISOString().slice(0,10)).then(ordenCompras =>{//funcion firebsae
-            getOrdenCompra(ordenCompras.id).then(item =>{//funcion firebase
-                console.log(item);
-                e.target.reset()
-                navigate("/")
+        //Consulto si el producto esta actulizado.
+        const aux = [...carrito]
+        aux.forEach(prodCarrito => {
+            getProducto(prodCarrito.id).then(prodBDD => {
+                if(prodBDD.stock >= prodCarrito.cant) {
+                    prodBDD.stock -= prodCarrito.cant
+                    updateProducto(prodCarrito.id, prodBDD)
+                } else {
+                    console.log("Stock no valido")
+                    //CASO USO PRODUCTO NO COMPRADO
+                }
             })
         })
+
+        //La orden de compra se genera dsp de la modificacion de mi Base de Datos.
+        createOrdenCompra(cliente,totalPrice(), new Date().toISOString()).then(ordenCompra => {
+            getOrdenCompra(ordenCompra.id).then(item => {
+                toast.success(`¡Muchas gracias por su compra, su orden es ${item.id}`)
+                emptyCart()
+                e.target.reset()
+                navigate("/")
+            }).catch(error => {
+                toast.error("Su orden no fue generada con exito")
+                console.error(error)
+            })
+            
+        })
+        
     }
     
     return (

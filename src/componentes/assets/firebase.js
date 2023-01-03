@@ -64,7 +64,6 @@ const deleteProducto = async(id) =>{
     const estado = await deleteDoc(doc(db, "productos", id))
     return estado
 }
-
 //CREATE Y READ ORDENES COMPRA
 
 const createOrdenCompra = async (cliente, preTotal, fecha ) => {

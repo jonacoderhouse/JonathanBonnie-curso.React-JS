@@ -1,10 +1,13 @@
 import React from 'react';
 import ItemCount from "../ItemCount/ItemCount"
 import {useCarritoContext} from "../../context/CarritoContex"
+import { useDarkModeContext } from "../../context/DarkModeContext";
+import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({item}) => {
     const {addItem} = useCarritoContext() //CONTEXT
+    const {darkMode} = useDarkModeContext()
     
     const onAdd = (contador) => {
         addItem(item, contador)
@@ -24,7 +27,7 @@ const ItemDetail = ({item}) => {
                     <p className="card-text">Precio: $ {new Intl.NumberFormat('de-DE').format(item.precio)} </p>
                     <p className="card-text">Stock: {item.stock} </p>
                     <ItemCount stock= {item.stock} onAdd={onAdd}/><br/>
-                    <button className="btn btn-warning">Finalizar Compra</button>
+                    <button className={`btn ${darkMode ? 'btn-primary' : 'btn-secondary'}`}><Link to="/cartDtail" className="nav-link">Finalizar compra</Link></button>
                 </div>
                 
             </div>
