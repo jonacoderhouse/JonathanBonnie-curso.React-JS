@@ -27,9 +27,8 @@ const Checkout = () => {
                     //CASO USO PRODUCTO NO COMPRADO
                 }
             })
-        })
-
-        //La orden de compra se genera dsp de la modificacion de mi Base de Datos.
+        })//La orden de compra se genera dsp de la modificacion de mi Base de Datos.
+        
         createOrdenCompra(cliente,totalPrice(), new Date().toISOString()).then(ordenCompra => {
             getOrdenCompra(ordenCompra.id).then(item => {
                 toast.success(`¡Muchas gracias por su compra, su orden es ${item.id}`)
