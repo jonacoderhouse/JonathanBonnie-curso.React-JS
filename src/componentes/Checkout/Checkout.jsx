@@ -15,20 +15,23 @@ const Checkout = () => {
         e.preventDefault()
         const datForm = new FormData(datosFormulario.current)
         const cliente = Object.fromEntries(datForm) //metodo
+
         //Consulto si el producto esta actulizado.
         const aux = [...carrito]
         aux.forEach(prodCarrito => {
-            getProducto(prodCarrito.id).then(prodBDD => {
+            getProducto(prodCarrito.id).then(prodBDD => {// consulto si el stock es igual a la cant de compra que quiero realizar antes de actulizar mi base de dato
                 if(prodBDD.stock >= prodCarrito.cant) {
                     prodBDD.stock -= prodCarrito.cant
                     updateProducto(prodCarrito.id, prodBDD)
                 } else {
-                    console.log("Stock no valido")
+                    toast.error(`El producto ${prodBDD.nombre} no tiene stock disponible.`)
+                    emptyCart() //removeItem(prodBDD.id)
+                    navigate("/")
                     //CASO USO PRODUCTO NO COMPRADO
                 }
             })
-        })//La orden de compra se genera dsp de la modificacion de mi Base de Datos.
-        
+        })
+        //La orden de compra se genera dsp de la modificacion de mi Base de Datos.
         createOrdenCompra(cliente,totalPrice(), new Date().toISOString()).then(ordenCompra => {
             getOrdenCompra(ordenCompra.id).then(item => {
                 toast.success(`¡Muchas gracias por su compra, su orden es ${item.id}`)
@@ -43,7 +46,6 @@ const Checkout = () => {
         })
         
     }
-    
     return (
         <div className="container">
             <form onSubmit={consultarFormulario} ref={datosFormulario}>
@@ -54,6 +56,10 @@ const Checkout = () => {
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email</label>
                     <input type="email" className="form-control" name="email" required />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="email2" className="form-label">Repetir Email</label>
+                    <input type="email" className="form-control" name="email2" required/>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="dni" className="form-label">DNI</label>
@@ -75,3 +81,4 @@ const Checkout = () => {
 }
 
 export default Checkout;
+
