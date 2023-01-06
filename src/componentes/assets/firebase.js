@@ -45,6 +45,7 @@ const getProductos = async() => {
         return {...prod.data(), id: prod.id}// data() basicamente devuelve un objeto con sus propiedades, y agrego del id
     })
     return items
+    
 }
     //FUNCION PARA CONSULTAR UN SOLO PROD POR MEDIO DE ID DE MI BASE DE DATO DE FIREBASE
     const getProducto =  async (id) => {
@@ -68,9 +69,9 @@ const deleteProducto = async(id) =>{
 
 const createOrdenCompra = async (cliente, preTotal, fecha ) => {
     const ordenCompra = await addDoc(collection(db, "ordenCompra"),{//creo una nueva colleccion en mi BD
-        nombreCompleto: cliente.nombre,
+        nombreCompleto: cliente.nombreCompleto,
         email: cliente.email,
-        dni: cliente.dni,
+        dni: cliente.DNI,
         direccion: cliente.direccion,
         celular: cliente.celular,
         fecha: fecha,
