@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+ LENAGUAJE ESPAÑOL:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ @ Proyecto Final React JS  Instituto CODERHOUSE @
 
-## Available Scripts
+_Proyecto final del curso de React JS dictado por CoderHouse, se trata de un ecommerce funcional, donde tenemos acceso a las distintas categorias de producto, como asi tambien a la lista general de productos, logrando realizar compras, eliminar compras y mismo finalizar una compra recibiendo un msj con el numero de id de la misma.
 
-In the project directory, you can run:
+-Comisión 41100
+_Profesor : FRANCISCO PUGH
 
-### `npm start`
+Instalaciòn:
+React-app requires Node.js v10+ to run.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Instale las dependencias y devDependencies e inicie el servidor:
+npm i
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Construido con👷:
 
-### `npm test`
+[React] (https://es.reactjs.org/) - JavaScript Framework
+[React-Toastify] (https://www.npmjs.com/package/react-toastify) - React Toastify
+[Firebase] (https://firebase.google.com/?hl=es) - NoSQL Database
+[Bootstrap] (https://getbootstrap.com/) - Bootstrap
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Implementado con:
+Vercel - Plataforma en la nube para sitios estáticos y funciones sin servidor.
 
-### `npm run build`
+------------------------
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+LANGUAGE ENGLISH:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+@ Final Project React JS CODERHOUSE Institute @
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+_Final project of the React JS course dictated by CoderHouse, it is a functional ecommerce, where we have access to the different product categories, as well as the general list of products, making purchases, deleting purchases and even finalizing a purchase by receiving a msg with the id number of it.
 
-### `npm run eject`
+-Commission 41100
+_Teacher: FRANCISCO PUGH
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Facility:
+React-app requires Node.js v10+ to run.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Install the dependencies and devDependencies and start the server.
+npm i
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Built with👷:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+[React] (https://es.reactjs.org/) - JavaScript Framework
+[React-Toastify] (https://www.npmjs.com/package/react-toastify) - React Toastify
+[Firebase] (https://firebase.google.com/?hl=en) - NoSQL Database
+[Bootstrap] (https://getbootstrap.com/) - Bootstrap
 
-## Learn More
+Implemented with:
+Vercel - Cloud platform for static sites and serverless functions.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Fotos/Photos:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

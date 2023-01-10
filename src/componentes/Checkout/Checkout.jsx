@@ -36,7 +36,7 @@ const Checkout = () => {
 
     const validate = (values)=>{
         const errors ={};
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;      
+        const mailFormatRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i; //exp regular que matchea con un formato de mail     
         //Errores de nombre y apellido (que no los ingrese)
         if (!values.nombreCompleto) {
             errors.nombreCompleto = "El nombre y apellido son necesarios";
@@ -44,13 +44,13 @@ const Checkout = () => {
         //Errores del email (que no lo ingrese, que no sea valido)
         if (!values.email) {
             errors.email = "El email es requerido";
-        } else if (!regex.test(values.email)) {
+        } else if (!mailFormatRegex.test(values.email)) {
             errors.email = "Ese no es un formato valido de email";
         }
         //Errores del email a validar (que no lo ingrese, que no sea valido, que no sea el mismo, que no sea valido podria borrarse ya que si es valido el primero solo con que sea igual ya es valido)
         if (!values.validateEmail){
             errors.validateEmail = "Debe ingresar nuevamente el email";            
-        }else if (!regex.test(values.validateEmail)) {
+        }else if (!mailFormatRegex.test(values.validateEmail)) {
             errors.validateEmail = "Ese no es un formato valido de email";
         }else if (values.validateEmail!==values.email){
             errors.validateEmail = "Los emails no coinciden";
