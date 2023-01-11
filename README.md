@@ -52,6 +52,14 @@ Vercel - Cloud platform for static sites and serverless functions.
 
 Fotos/Photos:
 
+![alt text](https://github.com/jonacoderhouse/reactCoderHouse/blob/main/Docs/Captura%20de%20pantalla%202023-01-11%20a%20la(s)%2004.33.34.png)
+![alt text](https://github.com/jonacoderhouse/reactCoderHouse/blob/main/Docs/Captura%20de%20pantalla%202023-01-11%20a%20la(s)%2004.33.42.png)
+![alt text](https://github.com/jonacoderhouse/reactCoderHouse/blob/main/Docs/Captura%20de%20pantalla%202023-01-11%20a%20la(s)%2004.34.03.png)
+![alt text](https://github.com/jonacoderhouse/reactCoderHouse/blob/main/Docs/Captura%20de%20pantalla%202023-01-11%20a%20la(s)%2004.34.17.png)
+![alt text](https://github.com/jonacoderhouse/reactCoderHouse/blob/main/Docs/Captura%20de%20pantalla%202023-01-11%20a%20la(s)%2004.34.21.png)
+![alt text](https://github.com/jonacoderhouse/reactCoderHouse/blob/main/Docs/Captura%20de%20pantalla%202023-01-11%20a%20la(s)%2004.34.55.png)
+![alt text](https://github.com/jonacoderhouse/reactCoderHouse/blob/main/Docs/Captura%20de%20pantalla%202023-01-11%20a%20la(s)%2004.35.02.png)
+
 
 
 
