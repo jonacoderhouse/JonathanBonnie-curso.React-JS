@@ -1,6 +1,3 @@
-// item recibe un OBJETO, lo voy a usar para visualiar los prodcutos, es donde voy alojar todos mis productos.
-// CARD PRODUCTO
-//voy a  generer una card por cada producto que tenga en stock que me llega desde ItemList
 
 import React from 'react';
 import { Link } from 'react-router-dom';

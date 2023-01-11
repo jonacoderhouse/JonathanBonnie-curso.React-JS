@@ -15,7 +15,7 @@ const ItemDetail = ({item}) => {
     }   
     return (
         
-        <div className="row g-0">
+        <div className="row g-0 ">
             <div className="col-md-4 imgBody">
                 <img src={item.img} alt="" className="img-fluid rounded-start"/>
             </div>
@@ -27,7 +27,7 @@ const ItemDetail = ({item}) => {
                     <p className="card-text">Precio: $ {new Intl.NumberFormat('de-DE').format(item.precio)} </p>
                     <p className="card-text">Stock: {item.stock} </p>
                     <ItemCount stock= {item.stock} onAdd={onAdd}/><br/>
-                    <button className={`btn ${darkMode ? 'btn-primary' : 'btn-secondary'}`}><Link to="/cartDtail" className="nav-link">Ir al Carrito</Link></button>
+                    <button className={`${darkMode ?"btn btn-primary" : "btn btn-warning"}`}><Link to="/cartDtail" className="nav-link">Ir al Carrito</Link></button>
                 </div>
                 
             </div>

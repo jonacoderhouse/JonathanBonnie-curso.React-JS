@@ -4,37 +4,38 @@ import { createOrdenCompra, getOrdenCompra, getProducto, updateProducto} from '.
 import { useCarritoContext } from "../../context/CarritoContex";
 import { toast } from 'react-toastify';
 import { useState, useEffect } from 'react';
+import { useDarkModeContext } from "../../context/DarkModeContext";
 
 
 const Checkout = () => {
-    const initialValues={nombreCompleto: "", email: "", validateEmail: "", DNI: "", celular: "", direccion: ""}
-    const [formValues, setFormValues]=useState(initialValues);
-    const [formErrors, setFormErrors]=useState({});
-    const [isSubmit, setIsSubmit] = useState(false);    
+    const valorInicial={nombreCompleto: "", email: "", validarEmail: "", DNI: "", celular: "", direccion: ""}
+    const [valorFormulario, setvalorFormulario]=useState(valorInicial);
+    const [errorFormulario, seterrorFormulario]=useState({});
+    const [esEnviar, setesEnviar] = useState(false);    
     const {totalPrice, carrito, emptyCart} = useCarritoContext()
     const datosFormulario = React.useRef()
     let navigate = useNavigate()
-
+    const {darkMode} = useDarkModeContext()
     useEffect(() => {
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
+        if (Object.keys(errorFormulario).length === 0 && esEnviar) {
             consultarFormulario();
         }
-      }, [formErrors]);
+      }, [errorFormulario]);
 
 
-    const handleSubmit = (e) => {
+    const manejarEnviar = (e) => {
         e.preventDefault();
-        setFormErrors(validate(formValues));
-        setIsSubmit(true);
+        seterrorFormulario(validar(valorFormulario));
+        setesEnviar(true);
         e.target.reset()
     };
 
-    const handleChange = (e)=>{
+    const manejarCambiar = (e)=>{
         const { name, value } = e.target;
-        setFormValues({ ...formValues, [name]: value });
+        setvalorFormulario({ ...valorFormulario, [name]: value });
     }
 
-    const validate = (values)=>{
+    const validar = (values)=>{
         const errors ={};
         const mailFormatRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i; //exp regular que matchea con un formato de mail     
         //Errores de nombre y apellido (que no los ingrese)
@@ -48,12 +49,12 @@ const Checkout = () => {
             errors.email = "Ese no es un formato valido de email";
         }
         //Errores del email a validar (que no lo ingrese, que no sea valido, que no sea el mismo, que no sea valido podria borrarse ya que si es valido el primero solo con que sea igual ya es valido)
-        if (!values.validateEmail){
-            errors.validateEmail = "Debe ingresar nuevamente el email";            
-        }else if (!mailFormatRegex.test(values.validateEmail)) {
-            errors.validateEmail = "Ese no es un formato valido de email";
-        }else if (values.validateEmail!==values.email){
-            errors.validateEmail = "Los emails no coinciden";
+        if (!values.validarEmail){
+            errors.validarEmail = "Debe ingresar nuevamente el email";            
+        }else if (!mailFormatRegex.test(values.validarEmail)) {
+            errors.validarEmail = "Ese no es un formato valido de email";
+        }else if (values.validarEmail!==values.email){
+            errors.validarEmail = "Los emails no coinciden";
         }
         //Errores del DNI (que no lo ingrese, ya que sea un numero me aseguro dandole el tipo "number" al input)
         if (!values.DNI){
@@ -69,8 +70,6 @@ const Checkout = () => {
         }
         return errors;
     };
-
-
 
     const consultarFormulario = (e) => {
         const datForm = new FormData(datosFormulario.current)
@@ -90,7 +89,7 @@ const Checkout = () => {
             })            
         })
 
-        delete cliente["validateEmail"];
+        delete cliente["validarEmail"];
 
         createOrdenCompra(cliente,totalPrice(), new Date().toISOString().slice(0,10)).then(ordenCompra => {
             getOrdenCompra(ordenCompra.id).then(item => {
@@ -106,36 +105,36 @@ const Checkout = () => {
 
     return (
         <div className="container espaciadoNav">
-            <form onSubmit={handleSubmit} ref={datosFormulario}>
+            <form onSubmit={manejarEnviar} ref={datosFormulario}>
                 <div className="mb-3">
-                    <label htmlFor="nombre" className="form-label">Nombre y Apellido</label>
-                    <input type="text" className="form-control" name="nombreCompleto"  value={formValues.nombreCompleto} onChange={handleChange}/>
-                    <p className='colorMensajeCheckout'>{formErrors.nombreCompleto}</p>
+                    <label htmlFor="nombre" className={`form-label ${darkMode ? 'text-white ' : 'text-black'}`}>Nombre y Apellido</label>
+                    <input type="text" className="form-control" name="nombreCompleto"  value={valorFormulario.nombreCompleto} onChange={manejarCambiar}/>
+                    <p className='colorMensajeCheckout'>{errorFormulario.nombreCompleto}</p>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email</label>
-                    <input type="text" className="form-control" name="email" value={formValues.email} onChange={handleChange}/>
-                    <p className='colorMensajeCheckout'>{formErrors.email}</p>
+                    <label htmlFor="email" className={`form-label ${darkMode ? 'text-white ' : 'text-black'}`}>Email</label>
+                    <input type="text" className="form-control" name="email" value={valorFormulario.email} onChange={manejarCambiar}/>
+                    <p className='colorMensajeCheckout'>{errorFormulario.email}</p>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="email2" className="form-label">Repetir Email</label>
-                    <input type="text" className="form-control" name="validateEmail" value={formValues.validateEmail} onChange={handleChange}/>
-                    <p className='colorMensajeCheckout'>{formErrors.validateEmail}</p>
+                    <label htmlFor="email2" className={`form-label ${darkMode ? 'text-white ' : 'text-black'}`}>Repetir Email</label>
+                    <input type="text" className="form-control" name="validarEmail" value={valorFormulario.validarEmail} onChange={manejarCambiar}/>
+                    <p className='colorMensajeCheckout'>{errorFormulario.validarEmail}</p>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="dni" className="form-label">DNI</label>
-                    <input type="number" className="form-control" name="DNI" value={formValues.DNI} onChange={handleChange}/>
-                    <p className='colorMensajeCheckout'>{formErrors.DNI}</p>
+                    <label htmlFor="dni" className={`form-label ${darkMode ? 'text-white ' : 'text-black'}`}>DNI</label>
+                    <input type="number" className="form-control" name="DNI" value={valorFormulario.DNI} onChange={manejarCambiar}/>
+                    <p className='colorMensajeCheckout'>{errorFormulario.DNI}</p>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="celular" className="form-label">Celular</label>
-                    <input type="number" className="form-control" name="celular" value={formValues.celular} onChange={handleChange}/>
-                    <p className='colorMensajeCheckout'>{formErrors.celular}</p>
+                    <label htmlFor="celular" className={`form-label ${darkMode ? 'text-white ' : 'text-black'}`}>Celular</label>
+                    <input type="number" className="form-control" name="celular" value={valorFormulario.celular} onChange={manejarCambiar}/>
+                    <p className='colorMensajeCheckout'>{errorFormulario.celular}</p>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="direccion" className="form-label">Dirección</label>
-                    <input type="text" className="form-control" name="direccion"  value={formValues.direccion} onChange={handleChange}/>
-                    <p className='colorMensajeCheckout'>{formErrors.direccion}</p>
+                    <label htmlFor="direccion" className={`form-label ${darkMode ? 'text-white ' : 'text-black'}`}>Dirección</label>
+                    <input type="text" className="form-control" name="direccion"  value={valorFormulario.direccion} onChange={manejarCambiar}/>
+                    <p className='colorMensajeCheckout'>{errorFormulario.direccion}</p>
                 </div>
                 <button type="submit" className="btn btn-primary">Finalizar Compra</button>
             </form>

@@ -1,4 +1,4 @@
- LENAGUAJE ESPAÑOL:
+ LENGUAJE ESPAÑOL:
 
  @ Proyecto Final React JS  Instituto CODERHOUSE @
 

@@ -8,7 +8,7 @@ const BotonDarkMode = () => {
 
     return (
 
-        <div className="theme-switch-wrapper">
+        <div className="theme-switch-wrapper botonBlack">
             <label className="theme-switch" htmlFor="checkbox">
                 <input type="checkbox" onInput={() => toggleDarkMode()} id="checkbox" />
                 <div className="slider round" />

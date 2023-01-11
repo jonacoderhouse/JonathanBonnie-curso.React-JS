@@ -20,13 +20,11 @@ const ItemCount = ({ stock, onAdd }) => {
         onAdd(contador)
     }
 
-    return <div>
-        <button className="btn btn-outline-info" onClick={sumar}> <i className="fas fa-plus"></i></button>
+    return <div className="contenedorButton">
+        <button className="btn btn-outline-primary" onClick={sumar}> <i className="fas fa-plus"></i></button>
         {contador}
-        <button className="btn btn-outline-info" onClick={resta}> <i className="fas fa-minus"></i></button>
-        <br />
-        <br />
-        <button className="btn btn-outline-info" onClick={agregarCarrito}><i className="fas fa-cart-plus"></i></button>
+        <button className="btn btn-outline-primary" onClick={resta}> <i className="fas fa-minus"></i></button>
+        <button className="btn btn-outline-primary" onClick={agregarCarrito}><i className="fas fa-cart-plus"></i></button>
     </div>
 
 }

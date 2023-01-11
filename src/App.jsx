@@ -19,7 +19,7 @@ import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   const bienvenidaEcommerce = "Bienvenido a mi E-commerce"
-  const seleccionProductos = "BONNIE E-COMMERCE"
+  const seleccionProductos = "Nuestra mejor selecciòn para tus gustos"
   return (
     <>
       <BrowserRouter>

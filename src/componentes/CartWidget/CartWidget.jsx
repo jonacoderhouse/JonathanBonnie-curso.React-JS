@@ -4,7 +4,7 @@ const CartWidget = () => {
     const {getItemQuantity} = useCarritoContext()
     return (
         <>
-            <button className="btn btn-outline-warning">
+            <button className="btn btn-outline-warning carrito">
                 <i className="fas fa-shopping-cart fa-lg"></i>
                 {getItemQuantity() > 0 && <span className="cantCarrito">{getItemQuantity()}</span>}
             </button>

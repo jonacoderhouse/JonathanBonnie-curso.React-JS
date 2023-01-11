@@ -36,7 +36,6 @@
 img {
     margin-top: 3px;
 }
-
 /*DARKMODE*/
 .darkMode {
     background-color: black;
@@ -48,10 +47,12 @@ img {
     right: -3%;
     color:white;
 }
+/*LINK CATEGORIAS*/
 .nav-Link{
-    margin: 10px;
-    color: orange;
+    margin: 15px;
+    
 }
+
 
 .cantCarrito {
     position: relative;
@@ -62,6 +63,7 @@ img {
     max-width: 540px;
     margin-top: 20px;
 }
+
 /*carrito compras*/
 .cart{
     text-align: center;
@@ -76,8 +78,6 @@ img {
     font-size: 50px;
     margin: 50px
 }
-
-
 
 /*NAVBAR*/
 .logo{
@@ -120,6 +120,7 @@ img {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin-top: 10px;
 }
 
 .LinkFooter{
@@ -144,4 +145,12 @@ img {
 
 .contenedorCart h1{
     color: antiquewhite;
+}
+/*BOTONES ITEMCOUNT*/
+.contenedorButton .btn{
+    margin: 5px;
+}
+
+.carrito{
+    margin-right: 10px;
 }

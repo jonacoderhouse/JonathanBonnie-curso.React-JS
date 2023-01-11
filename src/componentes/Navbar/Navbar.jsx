@@ -5,8 +5,6 @@ import {Link} from "react-router-dom"
 import logo from "../logo/mac1.png"
 import  BotonDarkMode from "./Boton/BotonDarkMode"
 //import {useDarkModeContext} from "../../context/DarkModeContext"
-
-import "../Navbar/Navbar.css"
 const Navbar = () => {
     //const darkMode = useDarkModeContext()
     return (
