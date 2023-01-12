@@ -37,7 +37,7 @@ const Cart = () => {
                     )}
 
                     <div className="divButtons">
-                        <p>Resumen de la compra: ${new Intl.NumberFormat('de-De').format(totalPrice())}</p>
+                        <p className={` ${darkMode ? 'text-white ' : 'text-black'} `}>Resumen de la compra: ${new Intl.NumberFormat('de-De').format(totalPrice())}</p>
                         <button className="btn btn-danger" onClick={emptyCart}>Vaciar Carrito</button>
                         <button className={`btn ${darkMode ? 'btn-secondary' : 'btn-primary'}`}><Link className="nav-link" to={'/'}>Continuar comprando</Link></button>
                         <button className={`btn ${darkMode ? 'btn-secondary' : 'btn-primary'}`}><Link className="nav-link" to={'/cart'}>Finalizar Compra</Link></button>
