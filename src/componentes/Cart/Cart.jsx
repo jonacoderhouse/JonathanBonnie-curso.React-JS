@@ -8,7 +8,7 @@ const Cart = () => {
     const { carrito, emptyCart, totalPrice, removeItem } = useCarritoContext()
 
 
-    return ( 
+    return  ( 
         <>
             {carrito.length === 0 ?
                 <div className='contenedorCart'>
