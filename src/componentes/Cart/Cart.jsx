@@ -4,7 +4,7 @@ import { useDarkModeContext } from "../../context/DarkModeContext";
 import { useCarritoContext } from "../../context/CarritoContex";
 
 const Cart = () => {
-    const { darkMode } = useDarkModeContext()
+    const { darkMode } = useDarkModeContext() 
     const { carrito, emptyCart, totalPrice, removeItem } = useCarritoContext()
 
 
