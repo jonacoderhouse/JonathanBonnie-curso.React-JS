@@ -6,6 +6,7 @@ import ItemList from "../ItemList/Itemlist"
 import { useParams } from "react-router-dom"
 import { getProductos } from '../../componentes/assets/firebase';
 
+
 const ItemListContainer = ({ greeting }) => {
     const [productos, setProductos] = useState([])
     const { category } = useParams();

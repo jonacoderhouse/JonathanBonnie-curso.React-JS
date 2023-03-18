@@ -4,7 +4,6 @@ import {useCarritoContext} from "../../context/CarritoContex"
 import { useDarkModeContext } from "../../context/DarkModeContext";
 import { Link } from 'react-router-dom';
 
-
 const ItemDetail = ({item}) => {
     const {addItem} = useCarritoContext() //CONTEXT
     const {darkMode} = useDarkModeContext()

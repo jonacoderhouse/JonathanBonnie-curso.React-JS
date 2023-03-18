@@ -41,7 +41,7 @@ export const CarritoProvider = (props) => {
     const getItemQuantity = () => {
         return carrito.reduce((acum,prod) => acum += prod.cant, 0)
     }
-
+ 
     //FUNCION PARA CALCULAR PRECIO TOTAL
     const totalPrice = () => {
         return carrito.reduce((acum, prod) => acum += (prod.cant * prod.precio), 0)

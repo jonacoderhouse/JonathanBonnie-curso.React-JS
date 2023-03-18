@@ -24,7 +24,7 @@ const Categorias = ({ opciones }) => {
                         </li>
                         <li className="nav-Link">
 
-                               <Link className="nav-Link" to={"/category/Accesorios"}><button className='btn btn-outline-secondary'><i className="fas fa-headphones fa-lg"></i></button></Link>
+                        <Link className="nav-Link" to={"/category/Accesorios"}><button className='btn btn-outline-secondary'><i className="fas fa-headphones fa-lg"></i></button></Link>
 
                         </li>
                 </ul>
